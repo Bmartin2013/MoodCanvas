@@ -1,0 +1,114 @@
+@import "./colors.scss";
+@import "./variables.scss";
+
+@mixin alignment {
+  display: flex;
+  justify-content: center;
+
+  &.align-column {
+    flex-direction: column;
+  }
+
+  &.align-items-center {
+    align-items: center;
+  }
+}
+
+@mixin glassy($backdrop-filter: 5px) {
+  background: $glassy-background-color;
+  box-shadow: $glassy-shadow;
+
+  backdrop-filter: blur($backdrop-filter);
+  -webkit-backdrop-filter: blur($backdrop-filter);
+
+  &.glassy-rounded-border {
+    border-radius: $glassy-border-radius;
+    border: $glassy-border;
+  }
+}
+
+@mixin indicator {
+  padding: $indicator-padding;
+  border-radius: $indicator-border-radius;
+  color: $white;
+  background: $indicator-gradient;
+  box-shadow: $indicator-box-shadow;
+
+  .indicator-info {
+    @include alignment;
+    letter-spacing: $indicator-letter-spacing;
+    font-weight: $bold;
+    padding: $no-padding;
+
+    :first-child {
+      margin: $indicator-title-margin;
+      font-size: $indicator-title-font;
+    }
+
+    :nth-child(2) {
+      font-size: $indicator-value-font;
+    }
+  }
+}
+
+@mixin clarification-label {
+  color: $white;
+  background-color: $black;
+  width: fit-content;
+  font-weight: $bold;
+  padding: $padding-label-x $padding-label-y;
+  font-size: $label-font-size;
+
+  &.clarification-rotated {
+    position: absolute;
+    top: $label-rotated-top;
+    left: $label-rotated-left;
+    transform: $label-transform-rotate;
+  }
+}
+
+@mixin hero-title($size: 30px) {
+  color: $hero-title-color;
+  font-size: $size;
+
+  &.title-spaced-small {
+    letter-spacing: $hero-default-title-letter-spacing;
+  }
+
+  &.title-spaced {
+    letter-spacing: $hero-title-letter-spacing;
+  }
+
+  &.title-shadow {
+    text-shadow: $hero-title-shadow-inset $hero-title-offset-x
+      $hero-title-offset-y $hero-title-shadow;
+  }
+
+  &.hero-description {
+    text-align: center;
+    color: $hero-description-color;
+  }
+}
+
+@mixin hero-input-form {
+  display: flex;
+
+  .glassy {
+    @include glassy;
+  }
+
+  input {
+    flex-grow: 1;
+    padding: $input-padding;
+  }
+
+  ::placeholder {
+    letter-spacing: $todo-letter-spacing;
+    text-align: center;
+  }
+
+  :focus {
+    outline: $none;
+  }
+}
+

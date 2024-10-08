@@ -1,0 +1,54 @@
+// COLORS
+$white: white;
+$black: black;
+$hero-gradient-1: #ff85ca;
+$hero-gradient-2: #ee90dd;
+$hero-gradient-3: #d99bec;
+$hero-gradient-4: #c3a6f6;
+$hero-gradient-5: #aeaffa;
+$hero-gradient-6: #98baff;
+$hero-gradient-7: #85c3ff;
+$hero-gradient-8: #76ccff;
+$hero-gradient-9: #61d9ff;
+$hero-gradient-10: #52e5ff;
+$hero-gradient-11: #50f1fb;
+$hero-gradient-12: #5ffbf1;
+$hero-description-color: #413f3f;
+$hero-title-color: #3f51b5;
+$hero-title-shadow: #9e9e9e;
+$indicator-gradient-1: rgba(0, 0, 0, 0.22);
+$indicator-gradient-2: rgba(255, 255, 255, 0.25);
+$glassy-background-color: rgba(255, 255, 255, 0.3);
+$glassy-shadow-color: rgba(31, 38, 135, 0.37);
+$glassy-border-color: rgba(255, 255, 255, 0.18);
+$td-done: $hero-title-shadow;
+
+// GRADIENTS
+$hero-gradient: linear-gradient(
+  to left bottom,
+  $hero-gradient-1,
+  $hero-gradient-2,
+  $hero-gradient-3,
+  $hero-gradient-4,
+  $hero-gradient-5,
+  $hero-gradient-6,
+  $hero-gradient-7,
+  $hero-gradient-8,
+  $hero-gradient-9,
+  $hero-gradient-10,
+  $hero-gradient-11,
+  $hero-gradient-12
+);
+
+$indicator-gradient: linear-gradient(
+  -45deg,
+  $indicator-gradient-1,
+  $indicator-gradient-2
+);
+
+// button enjoy full app
+$enjoy-full-app-1: #e91e63;
+$enjoy-full-app-2: #00bcd4;
+
+// scroll 
+$scroll-background:#ebebeb;

@@ -1,0 +1,26 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./src/index.html --open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "classnames": "^2.3.2",
+    "openai": "^4.65.0",
+    "p5": "^1.11.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-p5": "^1.4.1",
+    "react-p5-wrapper": "^4.1.2",
+    "sass": "^1.63.6",
+    "zod": "^3.23.8"
+  }
+}
