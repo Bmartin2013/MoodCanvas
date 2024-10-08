@@ -1,11 +1,11 @@
 import React from "react"
 import "./app.scss"
 import "./fonts/stylesheet.css"
-import DrawClient from "./pages/DrawClient"
+import Client from "./pages/Client"
 
 
 function App(){
-    return <DrawClient/>
+    return <Client/>
 }
 
 

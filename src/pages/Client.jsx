@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import P5Sketch from "../sketches/P5Sketch";
 import { EMOTION_PRESET, EMOTIONS } from "../sketches/constants/presets";
+import './Client.scss'
 
 const DrawClient = () => {
   const [options, setOptions] = useState({
