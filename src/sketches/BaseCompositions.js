@@ -35,7 +35,7 @@ export function drawCalm(p, options) {
     p.noFill();
     p.stroke(p.color(...extShapeColor));
 
-    p.ellipse(p.width / 2, p.height / 2, extShapeSize + breathOffset, extShapeSize + breathOffset); // Círculo animado
+    p.ellipse(p.width / 2, p.height / 2, extShapeSize + breathOffset, extShapeSize + breathOffset);
 }
 
 export function drawSadness(p, options) {
