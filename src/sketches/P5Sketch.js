@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import p5 from 'p5';
 import { drawComposition, setup } from './setup';
 
-const P5Sketch = ({emotions}) => {
+const P5Sketch = ({emotions, options}) => {
   const sketchRef = useRef();
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const P5Sketch = ({emotions}) => {
       p.setup = () => setup(p);
 
       p.draw = () => {
-        drawComposition(p,emotions)
+        drawComposition(p,emotions, options)
       }
 
     };

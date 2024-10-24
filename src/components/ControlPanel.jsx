@@ -7,7 +7,7 @@ export const ControlPanel = ({ options, setOptions }) => {
         [field]: value
       }));
     };
-  
+
     return (
       <div>
         <details>
