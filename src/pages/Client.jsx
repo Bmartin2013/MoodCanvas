@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import P5Sketch from "../sketches/P5Sketch";
 import "./client.scss";
 import EmotionCheckboxSection from "../components/EmotionCheckboxSection";
 import { EMOTIONS } from "../sketches/constants/presets";
+import SideBarLayout from "../components/BasicUiComponents/SideBarLayout/SideBarLayout";
+import { ControlPanel } from "../components/ControlPanel";
 
 const Client = () => {
   const [options, setOptions] = useState({
@@ -11,18 +13,22 @@ const Client = () => {
 
   const currentDate = new Date().toLocaleDateString();
 
+  useEffect(() => {
+    console.log(options);
+  }, options);
+
   return (
-    <div className="container">
-      <div className="column compositions">
-        <P5Sketch key={JSON.stringify(options)} emotions={options.emotions} />
-      </div>
-      <div className="column form">
-        <h2>Jane Smith - {currentDate} </h2>
-        <form>
+    <SideBarLayout
+      sidebar={<h2>Mood Canvas</h2>}
+      mainContent={
+        <>
+          <h2>Jane Smith - {currentDate} </h2>
+          <ControlPanel options={options} setOptions={setOptions} />
           <EmotionCheckboxSection options={options} setOptions={setOptions} />
-        </form>
-      </div>
-    </div>
+          <P5Sketch key={JSON.stringify(options)} emotions={options.emotions} />
+        </>
+      }
+    />
   );
 };
 

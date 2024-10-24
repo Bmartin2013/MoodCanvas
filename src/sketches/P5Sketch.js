@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import p5 from 'p5';
-import { drawBackground, drawComposition, setup } from './setup';
+import { drawComposition, setup } from './setup';
 
 const P5Sketch = ({emotions}) => {
   const sketchRef = useRef();
