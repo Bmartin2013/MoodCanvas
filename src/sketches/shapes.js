@@ -71,7 +71,8 @@ export function drawSmallRotatingTriangles(p, angleOffset, triangleCount, triang
     }
 }
 
-export function drawAnimation(toggleBreath, toggleAnimation, brSpeed='SLOW', aSpeed) {
+export function drawAnimation(toggleBreath, toggleAnimation, brSpeed, aSpeed) {
+    console.log('draw animation options', toggleBreath, toggleAnimation, brSpeed, aSpeed)
     const { breathSpeed, breathAmplitude } = BREATHING_SPEEDS[brSpeed];
     const { speed } = ANIMATION_SPEED[aSpeed];
 

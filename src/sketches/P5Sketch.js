@@ -6,6 +6,8 @@ const P5Sketch = ({emotions, options}) => {
   const sketchRef = useRef();
 
   useEffect(() => {
+
+    console.log(options);
     const sketch = (p) => {
       p.setup = () => setup(p);
 

@@ -19,7 +19,7 @@ const Client = () => {
       sidebar={<h2>Mood Canvas</h2>}
       mainContent={
         <>
-          <h2>Jane Smith - {currentDate} </h2>
+          <h2>My Draw - {currentDate} </h2>
           <ControlPanel options={options} setOptions={setOptions} />
           <EmotionCheckboxSection options={options} setOptions={setOptions} />
           <P5Sketch key={JSON.stringify(options)} emotions={options.emotions} options={options} />

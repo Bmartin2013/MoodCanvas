@@ -1,6 +1,6 @@
 export const BREATHING_SPEEDS = {
     FAST: { // anger, anxiety, euphoria
-        breathSpeed: 3,
+        breathSpeed: 5,
         breathAmplitude: 20
     },
     MEDIUM_FAST: { // anger, anxiety, euphoria

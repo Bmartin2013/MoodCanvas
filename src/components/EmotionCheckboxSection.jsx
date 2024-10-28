@@ -36,7 +36,6 @@ const EmotionCheckboxSection = ({ options, setOptions }) => {
 
   return (
     <fieldset>
-      <legend>Emotions</legend>
       {EMOTIONS.map((emotion) => (
         <label key={emotion}>
           <input
