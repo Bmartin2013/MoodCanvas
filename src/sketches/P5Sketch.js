@@ -2,17 +2,15 @@ import React, { useRef, useEffect } from 'react';
 import p5 from 'p5';
 import { drawComposition, setup } from './setup';
 
-const P5Sketch = ({emotions, options}) => {
+const P5Sketch = ({ emotions, options, isGifSaved, setIsGifSaved, sketchName }) => {
   const sketchRef = useRef();
 
   useEffect(() => {
-
-    console.log(options);
     const sketch = (p) => {
-      p.setup = () => setup(p);
+      p.setup = () => setup(p, isGifSaved, sketchName);
 
       p.draw = () => {
-        drawComposition(p,emotions, options)
+        drawComposition(p, emotions, options)
       }
 
     };
@@ -22,8 +20,9 @@ const P5Sketch = ({emotions, options}) => {
     // Cleanup on unmount
     return () => {
       myP5.remove();
+      setIsGifSaved(false);
     };
-  }, []);
+  }, [isGifSaved]);
 
   return <div ref={sketchRef}></div>;
 };

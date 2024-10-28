@@ -30,8 +30,11 @@ function drawEmotion(p, emotion, options) {
     }
 }
 
-export function setup(p) {
+export function setup(p, isGifSaved, sketchName='sketch') {
     drawBackground(BACKGROUND_DEFAULT.inrShapeSize, p.color(...BACKGROUND_DEFAULT.inrShapeColor), p)
+    if (isGifSaved) {
+        p.saveGif(sketchName, 5)
+    }
 }
 
 export function drawBackground(size, color, p) {

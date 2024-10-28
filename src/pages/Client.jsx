@@ -13,6 +13,8 @@ const Client = () => {
   });
 
   const currentDate = new Date().toLocaleDateString();
+  const title = `${options.emotions} - ${currentDate}`
+  const [isGifSaved, setIsGifSaved] = useState(false)
 
   return (
     <SideBarLayout
@@ -20,16 +22,20 @@ const Client = () => {
         <div>
           <h2>Mood Canvas</h2>
           <ControlPanel options={options} setOptions={setOptions} />
+          <button style={{background:"transparent", border: "1px solid white", fontWeight: 'bold', color: 'white', marginTop: '10px', padding:'10px'}} onClick={() => setIsGifSaved(true)}>Download Gif</button>
         </div>
       }
       mainContent={
         <>
-          <h2>My Draw - {currentDate} </h2>
+          <h2>{title}</h2>
           <EmotionCheckboxSection options={options} setOptions={setOptions} />
           <P5Sketch
             key={JSON.stringify(options)}
             emotions={options.emotions}
             options={options}
+            isGifSaved={isGifSaved}
+            setIsGifSaved={setIsGifSaved}
+            sketchName={title}
           />
         </>
       }
