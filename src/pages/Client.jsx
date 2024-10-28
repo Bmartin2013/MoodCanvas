@@ -9,20 +9,28 @@ import { ControlPanel } from "../components/ControlPanel";
 const Client = () => {
   const [options, setOptions] = useState({
     emotions: [EMOTIONS[0]],
-   ...EMOTION_PRESET[EMOTIONS[0]]
+    ...EMOTION_PRESET[EMOTIONS[0]],
   });
 
   const currentDate = new Date().toLocaleDateString();
 
   return (
     <SideBarLayout
-      sidebar={<h2>Mood Canvas</h2>}
+      sidebar={
+        <div>
+          <h2>Mood Canvas</h2>
+          <ControlPanel options={options} setOptions={setOptions} />
+        </div>
+      }
       mainContent={
         <>
           <h2>My Draw - {currentDate} </h2>
-          <ControlPanel options={options} setOptions={setOptions} />
           <EmotionCheckboxSection options={options} setOptions={setOptions} />
-          <P5Sketch key={JSON.stringify(options)} emotions={options.emotions} options={options} />
+          <P5Sketch
+            key={JSON.stringify(options)}
+            emotions={options.emotions}
+            options={options}
+          />
         </>
       }
     />

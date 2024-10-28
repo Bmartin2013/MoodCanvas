@@ -26,9 +26,9 @@ export const ControlPanel = ({ options, setOptions }) => {
     <div>
       <details>
         <summary
-          style={{ cursor: "pointer", fontSize: "1.2em", fontWeight: "bold" }}
+          style={{ cursor: "pointer", fontWeight: "bold" }}
         >
-          Customize emotion
+          Settings
         </summary>
         <div
           style={{
@@ -36,7 +36,6 @@ export const ControlPanel = ({ options, setOptions }) => {
             marginTop: "10px",
             border: "1px solid #ccc",
             borderRadius: "5px",
-            backgroundColor: "#f9f9f9",
           }}
         >
           <label>

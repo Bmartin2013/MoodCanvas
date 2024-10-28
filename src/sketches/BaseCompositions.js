@@ -27,7 +27,6 @@ export function drawJoy(p, options) {
 }
 
 export function drawCalm(p, options) {
-    console.log('draw calm options', options)
     const { toggleBreath, toggleAnimation, bSpeed, aSpeed, extShapeColor, inrShapeColor, inrShapeSize, extShapeSize } = options;
     const { breathOffset, angleOffset } = drawAnimation(toggleBreath, toggleAnimation, bSpeed, aSpeed);
 
