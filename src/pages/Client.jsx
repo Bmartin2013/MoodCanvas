@@ -10,10 +10,11 @@ const Client = () => {
   const [options, setOptions] = useState({
     emotions: [EMOTIONS[0]],
     ...EMOTION_PRESET[EMOTIONS[0]],
+    title: EMOTIONS[0]
   });
 
   const currentDate = new Date().toLocaleDateString();
-  const title = `${options.emotions} - ${currentDate}`
+  const title = `${options.title} - ${currentDate}`
   const [isGifSaved, setIsGifSaved] = useState(false)
 
   return (

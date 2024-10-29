@@ -130,6 +130,17 @@ export const ControlPanel = ({ options, setOptions }) => {
               }
             />
           </label>
+          <br />
+          <label>
+            Title
+            <input
+              type="text"
+              value={options.title}
+              onChange={(e) =>
+                handleChange("title", e.target.value)
+              }
+            />
+          </label>
         </div>
       </details>
     </div>
