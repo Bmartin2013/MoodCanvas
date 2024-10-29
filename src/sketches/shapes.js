@@ -45,12 +45,11 @@ export function drawTriangle(size, col, p, angleOffset) {
 export function drawSmallRotatingCircles(p, angleOffset, smallCircleCount, smallCircleRadius, smallCircleSize, strokeColor = 255) {
     for (let i = 0; i < smallCircleCount; i++) {
         p.push();
-        p.translate(p.width / 2, p.height / 2); // Mueve el origen al centro del canvas
-        p.rotate(p.TWO_PI / smallCircleCount * i + angleOffset); // Rota según el índice y el offset de ángulo
-        p.noFill(); // Sin relleno
-        p.stroke(strokeColor); // Color del borde
-        // Ajusta la posición de los pequeños círculos para que estén en la periferia del círculo grande
-        p.ellipse(smallCircleRadius, 0, smallCircleSize, smallCircleSize); // Dibuja el pequeño círculo
+        p.translate(p.width / 2, p.height / 2);
+        p.rotate(p.TWO_PI / smallCircleCount * i + angleOffset);
+        p.noFill();
+        p.stroke(strokeColor);
+        p.ellipse(smallCircleRadius, 0, smallCircleSize, smallCircleSize);
         p.pop();
     }
 }
@@ -58,39 +57,37 @@ export function drawSmallRotatingCircles(p, angleOffset, smallCircleCount, small
 export function drawSmallRotatingTriangles(p, angleOffset, triangleCount, triangleRadius, triangleSize, triangleColor) {
     for (let i = 0; i < triangleCount; i++) {
         p.push();
-        p.translate(p.width / 2, p.height / 2); // Mueve el origen al centro del canvas
-        p.rotate(p.TWO_PI / triangleCount * i + angleOffset); // Rota los triángulos alrededor del círculo central
+        p.translate(p.width / 2, p.height / 2);
+        p.rotate(p.TWO_PI / triangleCount * i + angleOffset);
         p.noFill();
         p.stroke(triangleColor);
         p.beginShape();
-        p.vertex(triangleRadius, 0); // Base del triángulo hacia afuera
-        p.vertex(triangleRadius + triangleSize, -triangleSize / 2); // Punta izquierda
-        p.vertex(triangleRadius + triangleSize, triangleSize / 2);  // Punta derecha
+        p.vertex(triangleRadius, 0);
+        p.vertex(triangleRadius + triangleSize, -triangleSize / 2);
+        p.vertex(triangleRadius + triangleSize, triangleSize / 2);
         p.endShape(p.CLOSE);
         p.pop();
     }
 }
 
-export function drawAnimation(toggleBreath, toggleAnimation, brSpeed='SLOW', aSpeed) {
+export function drawAnimation(toggleBreath, toggleAnimation, brSpeed, aSpeed) {
     const { breathSpeed, breathAmplitude } = BREATHING_SPEEDS[brSpeed];
     const { speed } = ANIMATION_SPEED[aSpeed];
 
-    // Ajuste de respiración
     if (toggleBreath) {
         if (breathingIn) {
-            breathOffset += breathSpeed; // Aumentar la velocidad de respiración
-            if (breathOffset > breathAmplitude) { // Limitar la amplitud
+            breathOffset += breathSpeed;
+            if (breathOffset > breathAmplitude) {
                 breathingIn = false;
             }
         } else {
-            breathOffset -= breathSpeed; // Reducir con la misma velocidad
+            breathOffset -= breathSpeed;
             if (breathOffset < -breathAmplitude) {
                 breathingIn = true;
             }
         }
     };
 
-    // Animación de rotación
     if (toggleAnimation) {
         angleOffset += speed;
     }

@@ -3,7 +3,7 @@ import { colors } from "./colors";
 const CALM_DEFAULT = {
     toggleAnimation: true,
     toggleBreath: true,
-    bspeed: 'SLOW',
+    bSpeed: 'SLOW',
     aSpeed: 'DEFAULT',
     inrShapeColor: colors.COLOR_BLUE,
     extShapeColor: colors.COLOR_BLUE,
@@ -15,7 +15,7 @@ const CALM_DEFAULT = {
 const SADNESS_DEFAULT = {
     toggleAnimation: true,
     toggleBreath: true,
-    bspeed: 'SLOW',
+    bSpeed: 'SLOW',
     aSpeed: 'DEFAULT',
     inrShapeColor: colors.COLOR_DARK_BLUE,
     extShapeSize: 400,
@@ -26,7 +26,7 @@ const SADNESS_DEFAULT = {
 const ANGER_DEFAULT = {
     toggleAnimation: true,
     toggleBreath: true,
-    bspeed: 'FAST',
+    bSpeed: 'FAST',
     aSpeed: 'DEFAULT',
     inrShapeColor: colors.COLOR_RED,
     extShapeColor: colors.COLOR_RED,
@@ -38,7 +38,7 @@ const ANGER_DEFAULT = {
 const ANXIETY_DEFAULT = {
     toggleAnimation: true,
     toggleBreath: true,
-    bspeed: 'MEDIUM_FAST',
+    bSpeed: 'MEDIUM_FAST',
     aSpeed: 'DEFAULT',
     inrShapeColor: colors.COLOR_VIBRANT_ORANGE,
     extShapeColor: colors.COLOR_ORANGE,
@@ -50,7 +50,7 @@ const ANXIETY_DEFAULT = {
 const ACCOMPLISHED_DEFAULT = {
     toggleAnimation: true,
     toggleBreath: true,
-    bspeed: 'SLOW',
+    bSpeed: 'SLOW',
     aSpeed: 'DEFAULT',
     inrShapeColor: colors.COLOR_VIBRANT_GREEN,
     extShapeColor: colors.COLOR_GREEN,
@@ -61,7 +61,7 @@ const ACCOMPLISHED_DEFAULT = {
 const FEAR_DEFAULT = {
     toggleAnimation: true,
     toggleBreath: true,
-    bspeed: 'FAST',
+    bSpeed: 'FAST',
     aSpeed: 'DEFAULT',
     inrShapeColor: colors.COLOR_DARK_RED,
     extShapeColor: colors.COLOR_RED,
@@ -73,7 +73,7 @@ const FEAR_DEFAULT = {
 const JOY_DEFAULT = {
     toggleAnimation: true,
     toggleBreath: true,
-    bspeed: 'MEDIUM',
+    bSpeed: 'MEDIUM',
     aSpeed: 'DEFAULT',
     inrShapeColor: colors.COLOR_YELLOW,
     extShapeColor: colors.COLOR_YELLOW,

@@ -1,5 +1,5 @@
 import { EMOTION_PRESET, BACKGROUND_DEFAULT } from "./constants/presets";
-import { drawAnger, drawAccomplished, drawJoy, drawSadness, drawCalm, drawFear,drawAnxiety } from "./BaseCompositions";
+import { drawAnger, drawAccomplished, drawJoy, drawSadness, drawCalm, drawFear, drawAnxiety } from "./BaseCompositions";
 
 function drawEmotion(p, emotion, options) {
     switch (emotion) {
@@ -30,8 +30,11 @@ function drawEmotion(p, emotion, options) {
     }
 }
 
-export function setup(p) {
+export function setup(p, isGifSaved, sketchName='sketch') {
     drawBackground(BACKGROUND_DEFAULT.inrShapeSize, p.color(...BACKGROUND_DEFAULT.inrShapeColor), p)
+    if (isGifSaved) {
+        p.saveGif(sketchName, 5)
+    }
 }
 
 export function drawBackground(size, color, p) {
@@ -41,10 +44,18 @@ export function drawBackground(size, color, p) {
 
 }
 
-export function drawComposition(p, emotions) {
+const mergeOptions = (preset, customOptions) => {
+    return {
+        ...preset,
+        ...customOptions,
+    };
+};
+
+export function drawComposition(p, emotions, options) {
     p.background(30, 30, 40);
     emotions.forEach(emotion => {
         const preset = EMOTION_PRESET[emotion];
-        drawEmotion(p, emotion, preset);
+        const mergedOptions = options ? mergeOptions(preset, options) : preset;
+        drawEmotion(p, emotion, mergedOptions);
     });
 }

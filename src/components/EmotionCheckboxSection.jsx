@@ -3,14 +3,12 @@ import { EMOTION_PRESET, EMOTIONS } from "../sketches/constants/presets";
 
 const EmotionCheckboxSection = ({ options, setOptions }) => {
   const handleChange = (e) => {
-    const { value, checked } = e.target;
+    const { value } = e.target;
 
-    setOptions((prevOptions) => {
-      const newEmotions = checked
-        ? [...prevOptions.emotions, value]
-        : prevOptions.emotions.filter((emotion) => emotion !== value);
-      return { ...prevOptions, emotions: newEmotions };
-    });
+    setOptions((prevOptions) => ({
+      ...prevOptions,
+      emotions: [value],
+    }));
   };
 
   useEffect(() => {
@@ -36,11 +34,11 @@ const EmotionCheckboxSection = ({ options, setOptions }) => {
 
   return (
     <fieldset>
-      <legend>Emotions</legend>
+      <h4>Choose a base emotion</h4>
       {EMOTIONS.map((emotion) => (
         <label key={emotion}>
           <input
-            type="checkbox"
+            type="radio"
             name="emotions"
             value={emotion}
             onChange={handleChange}
