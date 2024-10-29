@@ -3,6 +3,7 @@ Track yourself with art 🎨
 
 ![Mood tracker](./assets/VTC.gif)
 
+Live demo ![here](https://moodcanvas.netlify.app/)
 
 ## Description
 **Mood Canvas** is a tool designed to help you track your mood using visual compositions. Each mood is associated with a specific shape, allowing you to overlay and create more complex figures. The emotions available are:
